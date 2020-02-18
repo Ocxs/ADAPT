@@ -21,4 +21,4 @@ ADEN is proposed for storytelling recommendation by leveraging the cross-domain 
 cd ADEN;
 python main_aden_ft.py; 
 ```
-Note that `python main_aden_ft.py` uses the pre-trained feature extractors by DUAL model, but `python main_aden.py` is without using the pre-trained feature extractors. Our pre-trained models of feature extractors are in `ADEN/Files/output/DUAL`.
+Note that `python main_aden_ft.py` uses the feature extractors pre-trained by DUAL model, but `python main_aden.py` is without using the pre-trained feature extractors. Our pre-trained models of feature extractors are in `ADEN/Files/output/DUAL`.
