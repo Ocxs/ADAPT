@@ -1,0 +1,50 @@
+agg_act: relu
+ps_hosts: 
+cate_name: cate
+shuffle_size: 50000
+num_epochs: 100
+content_text_encoder_type: multi_att
+num_train_steps: 203400
+worker_hosts: 
+window_size: 3,5
+init_lr: 0.0001
+train_table: odps://search_offline_dev/tables/zq_small_pretrain_train_data
+keep_checkpoint_max: 2
+model_dir: oss://zhongqiu123/2020kdd/ftb_dual/20200131-152024/sub_dann_False_cate_hinge_multi_att_avg_True_adamw_0.0001_0.01
+local: False
+job_name: 
+loss_type: hinge
+project_name: ftb_dual
+use_shuffle: True
+product_text_encoder_type: avg
+agg_layer: 256,128
+model_date: 20200131-152024
+dropout_prob: 0.1
+emb_dim: 64
+mode: train
+att_act: tanh
+margin: 1.0
+eval_table: odps://search_offline_dev/tables/zq_small_pretrain_test_data
+vocab_size: 21128
+train_data_len: 1041873
+task_index: 0
+use_cate_name: False
+num_attention_heads: 4
+l2_reg: 0.01
+save_summary_steps: 1000
+dot_att_use_fc: True
+output_dir: oss://zhongqiu123/2020kdd/
+feature_transfer_type: sub_dann
+max_cate_text_len: 10
+optimizer: adamw
+selected_cols: content_id,product_id,content_title_input_ids,content_title_input_len,product_title_input_ids,product_title_input_len,cate_name_input_ids,cate_name_input_len,cate_level1_name_input_ids,cate_level1_name_input_len,content_image_feat,product_image_feat,neg_content_id,neg_product_id,neg_content_title_input_ids,neg_content_title_input_len,neg_product_title_input_ids,neg_product_title_input_len,neg_cate_name_input_ids,neg_cate_name_input_len,neg_cate_level1_name_input_ids,neg_cate_level1_name_input_len,neg_content_image_feat,neg_product_image_feat
+batch_size: 512
+num_threads: 24
+output_table: /Users/chenxs/Documents/Research/WeiTao/data/output/
+max_text_len: 32
+every_n_iter: 1000
+att_dropout_prob: 0.1
+num_warmup_steps: 20000
+model_dir_list: [0.01, 0.0001, 'adamw', True, 'avg', 'multi_att', 'hinge', 'cate', False, 'sub_dann']
+save_checkpoints_steps: 2034
+user_filename: ./Files/zq11_v2_user_id.txt
