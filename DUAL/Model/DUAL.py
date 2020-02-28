@@ -405,7 +405,7 @@ class DUALInferModel(DUALModel):
     target_title_emb = self.load_title_emb_and_mask(
       features['{}_title_input_ids'.format(self.target)],
       features['{}_title_input_len'.format(self.target)],
-      pos_query, encoder_type,
+      encoder_type,
       text_encoder_name, False, dropout_prob
     )
     target_image_emb = tf.layers.dense(
